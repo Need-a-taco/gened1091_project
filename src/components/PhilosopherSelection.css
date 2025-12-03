@@ -1,0 +1,155 @@
+.philosopher-selection-container {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  padding: 2.5rem;
+  max-width: 1000px;
+  width: 100%;
+  animation: slideIn 0.4s ease-out;
+}
+
+.selection-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.selection-header h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.selection-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.philosophers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.philosopher-card {
+  background: white;
+  border: 3px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.philosopher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.philosopher-card.selected {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.philosopher-card-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.philosopher-card-name {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.philosopher-card-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.selection-indicator {
+  margin-top: 0.5rem;
+}
+
+.selection-indicator input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.selection-submit {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.begin-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem 3.5rem;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.begin-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.begin-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .philosopher-selection-container {
+    padding: 1.5rem;
+  }
+
+  .philosophers-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .selection-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .selection-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .philosopher-card {
+    padding: 1.5rem;
+  }
+
+  .begin-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+

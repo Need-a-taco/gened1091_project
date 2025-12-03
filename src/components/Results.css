@@ -1,0 +1,488 @@
+.results-container {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  padding: 2.5rem;
+  max-width: 900px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.results-header h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.results-subtitle {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.death-notice {
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+  border: 3px solid #8B0000;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.death-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.death-notice h3 {
+  color: #8B0000;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.death-reason {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.death-message {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.adherence-section {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 2px solid #e0e0e0;
+}
+
+.adherence-section h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.adherence-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.initial-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.initial-choice .label {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.initial-choice .value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.adherence-percentage {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.percentage-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.percentage-inner {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.percentage-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.percentage-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+.adherence-message {
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  max-width: 500px;
+}
+
+.adherence-message p {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.points-summary {
+  background: #f8f9fa;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.points-summary h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.points-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .points-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.point-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.point-card:hover {
+  transform: translateY(-3px);
+}
+
+.point-card.career {
+  border-top: 3px solid #4299e1;
+}
+
+.point-card.parents {
+  border-top: 3px solid #ed8936;
+}
+
+.point-card.children {
+  border-top: 3px solid #48bb78;
+}
+
+.point-card.health {
+  border-top: 3px solid #e53e3e;
+}
+
+.point-card.friends {
+  border-top: 3px solid #9f7aea;
+}
+
+.point-card.total {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-top: none;
+}
+
+.point-card.total .point-value,
+.point-card.total .point-label {
+  color: white;
+}
+
+.point-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.point-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.15rem;
+}
+
+.point-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.primary-philosopher {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border: 3px solid;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.philosopher-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.philosopher-name {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.philosopher-description {
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.alignment-strength {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.strength-label {
+  color: var(--text-secondary);
+}
+
+.strength-value {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.all-alignments {
+  margin-bottom: 2.5rem;
+}
+
+.all-alignments h4 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.philosopher-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.philosopher-bar-container {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.philosopher-bar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.philosopher-bar-name {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.philosopher-bar-count {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.philosopher-bar-track {
+  background: #e0e0e0;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.philosopher-bar-fill {
+  height: 100%;
+  transition: width 0.8s ease-out;
+  border-radius: 6px;
+}
+
+.choice-history {
+  margin-bottom: 2rem;
+}
+
+.choice-history h4 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.choices-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.choice-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.choice-age {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  min-width: 60px;
+}
+
+.choice-details {
+  flex: 1;
+}
+
+.choice-question {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.choice-answer {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+}
+
+.choice-philosopher {
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.restart-section {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.restart-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.restart-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+  .results-container {
+    padding: 1.5rem;
+  }
+
+  .results-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .philosopher-name {
+    font-size: 1.4rem;
+  }
+
+  .philosopher-description {
+    font-size: 1rem;
+  }
+
+  .choice-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .choice-age {
+    min-width: auto;
+  }
+
+  .adherence-section,
+  .points-summary {
+    padding: 1.5rem;
+  }
+
+  .points-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .percentage-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .percentage-inner {
+    width: 100px;
+    height: 100px;
+  }
+
+  .percentage-number {
+    font-size: 1.7rem;
+  }
+}
+
